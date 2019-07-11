@@ -15,6 +15,30 @@ public class Store {
         this.itemId = itemId;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Store)) return false;
+
+        Store store = (Store) o;
+
+        if (getItemId() != store.getItemId()) return false;
+        if (getId() != store.getId()) return false;
+        if (!getStoreName().equals(store.getStoreName())) return false;
+        if (!getLocation().equals(store.getLocation())) return false;
+        return getStoreCode().equals(store.getStoreCode());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getStoreName().hashCode();
+        result = 31 * result + getLocation().hashCode();
+        result = 31 * result + getStoreCode().hashCode();
+        result = 31 * result + getItemId();
+        result = 31 * result + getId();
+        return result;
+    }
+
     public String getStoreName() {
         return storeName;
     }
