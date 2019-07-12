@@ -1,5 +1,6 @@
 package dao;
 
+import models.Item;
 import models.Store;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -7,65 +8,64 @@ import org.sql2o.Sql2oException;
 
 import java.util.List;
 
-public class Sql2oStoreDao implements StoreDao {
+public class Sql2oItemDao implements ItemDao {
     private final Sql2o sql2o;
-    public Sql2oStoreDao(Sql2o sql2o){
+    public Sql2oItemDao(Sql2o sql2o){
         this.sql2o = sql2o;
     }
     @Override
-    public void add(Store store) {
-        String sql ="INSERT INTO stores (storeName, location,storeCode,itemId) VALUES (:storeName, :location,:storeCode,:itemId)";
+    public void add(Item item) {
+        String sql ="INSERT INTO items (itemName, quantity,categoryId) VALUES (:itemName, :quantity,:categoryId)";
         try(Connection conn = sql2o.open()){
             int id = (int) conn.createQuery(sql, true)
-                    .bind(store)
+                    .bind(item)
                     .executeUpdate()
                     .getKey();
-            store.setId(id);
+            item.setId(id);
         }catch (Sql2oException ex){
             System.out.println(ex);
         }
-
     }
 
     @Override
-    public Store findById(int id) {
-        String sql = "SELECT * FROM stores WHERE id=:id";
+    public Item findById(int id) {
+        String sql = "SELECT * FROM items WHERE id=:id";
         try(Connection conn = sql2o.open()){
             return conn.createQuery(sql)
                     .addParameter("id", id)
                     .throwOnMappingFailure(false)
-                    .executeAndFetchFirst(Store.class);
+                    .executeAndFetchFirst(Item.class);
         }
     }
 
     @Override
-    public void updateStore(int id, String storeName, String location, String storeCode, int itemId) {
-        String sql = "UPDATE stores SET (storeName, location,storeCode,itemId) = (:storeName,:location,:storeCode,:itemId) WHERE id=:id";
+    public void updateItem(int id, String itemName, int quantity, int categoryId) {
+        String sql = "UPDATE items SET (itemName, quantity,categoryId) = (:itemName, :quantity,:categoryId) WHERE id=:id";
         try(Connection conn = sql2o.open()){
             conn.createQuery(sql)
-                    .addParameter("storeName",storeName)
-                    .addParameter("location", location)
-                    .addParameter("storeCode",storeCode)
-                    .addParameter("itemId",itemId)
+                    .addParameter("itemName",itemName)
+                    .addParameter("quantity", quantity)
+                    .addParameter("categoryId",categoryId)
                     .addParameter("id", id)
                     .executeUpdate();
         }catch (Sql2oException ex){
             System.out.println(ex);
         }
+
     }
 
     @Override
-    public List<Store> getAllStore() {
-        String sql = "SELECT * FROM stores";
+    public List<Item> getAll() {
+        String sql = "SELECT * FROM items";
         try(Connection conn = sql2o.open()){
             return conn.createQuery(sql)
-                    .executeAndFetch(Store.class);
+                    .executeAndFetch(Item.class);
         }
     }
 
     @Override
     public void clearAll() {
-        String sql = "DELETE FROM stores";
+        String sql = "DELETE FROM items";
         try (Connection conn = sql2o.open()){
             conn.createQuery(sql)
                     .executeUpdate();
@@ -73,12 +73,13 @@ public class Sql2oStoreDao implements StoreDao {
             System.out.println(ex);
         }
 
+
     }
 
     @Override
     public void deleteById(int id) {
         try (Connection con = sql2o.open()) {
-            String sql = "DELETE FROM stores WHERE id = :id;";
+            String sql = "DELETE FROM items WHERE id = :id;";
             con.createQuery(sql)
                     .addParameter("id", id)
                     .executeUpdate();
