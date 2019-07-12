@@ -1,0 +1,106 @@
+{{#partial "content"}}
+
+    <h1>ITEMS AVAILABLE</h1>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="display">
+                <p> Item name: Flour </p>
+                <p> Item Quantity: 90 </p>
+                <p> categoryId:5 </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="display">
+                <p> Item name:Dresses </p>
+                <p> Item Quantity:89 </p>
+                <p> categoryId: 6 </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="display">
+                <p> Item name:Laptops </p>
+                <p> Item Quantity: 100 </p>
+                <p> categoryId:3 </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="display">
+                <p> Item name:Gas cookers </p>
+                <p> Item Quantity:50 </p>
+                <p> categoryId: 7 </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="display">
+                <p> Item name:Sugar </p>
+                <p> Item Quantity:90 </p>
+                <p> categoryId: 4 </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="display">
+                <p> Item name:SoftDrinks </p>
+                <p> Item Quantity: 55 </p>
+                <p> categoryId: 3 </p>
+            </div>
+        </div>
+    </div>
+
+    {{#each items}}
+
+        <div class="col-md-4">
+            <div class="display">
+                <p> Item name:{{itemName}} </p>
+                <p> Item Quantity: {{quantity}} </p>
+                <p> categoryId: {{categoryId}}</p>
+            </div>
+        </div>
+    {{/each}}
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <!--Content-->
+            <div class="homeland">
+                <div class="modal-content form-elegant">
+                    <!--Header-->
+                    <div class="modal-header text-center">
+                        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Add the category</strong></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body mx-4">
+
+                        <form action="/category/new" method="post" >
+                            <div class="form-group">
+                                <label for="categoryName">CategoryName</label>
+                                <input name="categoryName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="categoryId">CategoryId</label>
+                                <input name="categoryId" class="form-control" required>
+                            </div>
+
+                            <button type="button" id ="button" class="btn btn-success btn-block btn-rounded z-depth-1">Create</button>
+                        </form>
+                    </div>
+
+                </div>
+                <!--Footer-->
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
