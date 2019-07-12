@@ -1,6 +1,12 @@
 *{
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
+  color: black;
+}
+body{
+  background-image: url(https://images.pexels.com/photos/1111316/pexels-photo-1111316.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 nav{
   margin-top: 10px;
@@ -59,9 +65,8 @@ ul > li > a:hover{
     font-weight: 400; }
 
 footer{
-  background-color: #E8DAB2;
-  color: black;
-  height: 50px;
+
+ height: 50px;
  padding-top: 10px;
  padding-bottom: 0;
 
@@ -80,10 +85,13 @@ table tbody tr td{
 }
 h1, h4, h3{
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 28px;
   text-transform: uppercase;
 }
 .card-text{
   padding-bottom: 10px !important;
   height:30px;
+}
+.card{
+  background: transparent !important;
 }
