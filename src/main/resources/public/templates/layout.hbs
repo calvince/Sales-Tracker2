@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Organisation News{{/block}}</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFeLSQAvnFxoOQRRiu57s9Y95dJKHKuRgar8-d625PfLnEL3kNhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFeLSQAvnFxoOQRRiu57s9Y95dJKHKuRgar8-d625PfLnEL3kN">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/js/mdb.min.js"></script>
+</head>
+<body>
+<div>
+    <nav>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiqcX2AIM2whyP5YNHYbZ9xvQ8f0349F07c0_u_5fwxNhat0LMrw" height="40px" alt="logo"/>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="">Categories</a></li>
+            <li><a href="">Item</a></li>
+            <li><a href="stock.html">Stock</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="col-md-8 offset-md-2">
+            {{#block "content"}}
+            {{/block}}
+
+        </div>
+    </div>
+</div>
+
+{{#block "footer"}}
+    </body>
+    </html>
+{{/block}}
