@@ -1,0 +1,69 @@
+<h1 class="text-center h1spacing">Sales Tracker</h1>
+<div class="row">
+    <div class="col-md-8 offset-md-2 text-center"><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4></div>
+</div>
+<div class="spacing">
+
+</div>
+<div class="stores">
+    <div class="card-deck">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">Mbugua's Enterprise</h4>
+                <p class="card-text"> <strong>Location</strong>: Woodley .</p>
+                <p class="card-text"><strong>Item Id</strong>: 4 </p>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">Mbugua's Schools</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <!--Content-->
+                        <div class="modal-content form-elegant">
+                            <!--Header-->
+                            <div class="modal-header text-center">
+                                <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Add</strong></h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body mx-auto">
+                                <div class="row d-flex align-items-center mb-4">
+                                    <form action="/" method="post" >
+                                        <div class="form-group">
+                                            <label for="storeName">Name</label>
+                                            <input name="storeName" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Location</label>
+                                            <input name="location" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="itemId">Item Id</label>
+                                            <input name="itemId" class="form-control" required>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-block btn-rounded z-depth-1">Add</button>
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center card-body">
+                    <h4 class="card-title">Mbugua's latest Store</h4>
+                    <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#elegantModalForm"><h4 class="card-title">Add Store</h4></a>
+                </div>
+            </div>
+        </div>
